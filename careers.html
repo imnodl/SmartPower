@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | SPEC</title>
+    <link rel="stylesheet" href="css/careers.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    
+    
+    <link rel="icon" href="css/img/iconlogo.ico" type="image/x-icon">
+</head>
+<body class="custom-cursor">
+
+    <div class="image-overlay">
+        <img src="css/img/hiringbg1.jpg" alt="Background" id="bg-hiring" >
+    </div>
+     
+
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="css/img/specmainwhite.png" alt="logo"></a>
+        </div>
+        
+
+        <nav class="navbar">
+            
+            
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="products.html">PRODUCTS</a></li>
+                <li><a href="facility.html">FACILITY</a></li>
+                <li><a href="contactus.html">CONTACT US</a></li>
+                <li><a href="careers.html"  class="active">CAREERS</a></li>
+                
+                
+            </ul>
+            
+        </nav>
+        
+        
+    </header>
+
+
+
+
+    <!-- Content of your page -->
+    <div class="main-container">
+    <div class="content " id="content">
+        
+                <div class="tagline" id="tagline">
+                
+                    <h2 class="work">
+                        <span class="highlight">Work</span> with Us <br>
+                        
+                    </h2>
+                    
+                <br><br><br>
+                <p>We're always eager to meet fresh <strong><span class="highlight">Talent</span></strong>, so check out our open positions.</p>
+
+
+                <a href="#work" id="hiringbtn">
+                    <button class="hiringbtn">OPEN POSITIONS</button>
+                </a>
+                </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
+               
+                
+    </div>
+           
+<br><br>
+
+
+
+<div class="content " id="content">
+        
+    <div class="tagline2" id="tagline2">
+    
+        <h2 id="work">
+            Career <span class="highlight">Oppurtunities</span>  <br>
+        </h2>
+        <br>
+        <p>We’re always looking for talented individuals to join our team. <br>Explore our open positions and discover how you can grow with us.</p>
+        <br><br>
+    
+
+
+
+        <div class="career-container">
+            <div class="image-wrapper" onclick="openModal('accountingModal')">
+                <img src="css/img/accounting.jpg" alt="Accounting">
+                <div class="image-label">Accounting & HR</div>
+            </div>
+            
+            <div class="image-wrapper" onclick="openModal('engineeringModal')">
+                <img src="css/img/engineering.jpg" alt="Engineering">
+                <div class="image-label">Engineering</div>
+            </div>
+        
+            <div class="image-wrapper" onclick="openModal('itModal')">
+                <img src="css/img/infotech.jpg" alt="I.T.">
+                <div class="image-label">I.T.</div>
+            </div>
+        
+            <div class="image-wrapper" onclick="openModal('procurementModal')">
+                <img src="css/img/warehouse.jpg" alt="Procurement">
+                <div class="image-label">Warehouse & Procurement</div>
+            </div>
+        
+            <div class="image-wrapper" onclick="openModal('productionModal')">
+                <img src="css/img/production.jpg" alt="Production">
+                <div class="image-label">Production</div>
+            </div>
+        
+            <div class="image-wrapper" onclick="openModal('qualityModal')">
+                <img src="css/img/quality.jpg" alt="Quality Control">
+                <div class="image-label">Quality Control</div>
+            </div>
+        
+            <div class="image-wrapper" onclick="openModal('utilityModal')">
+                <img src="css/img/cleaner.jpg" alt="Utility">
+                <div class="image-label">House Keeping</div>
+            </div>
+        </div>
+
+        <!-- MODAL -->
+        <!-- Modal Structure for ACCOUNTING -->
+
+
+
+        <div id="accountingModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('accountingModal')">&times;</span>
+                
+                <h2 id="accountingJobs">No Job Openings</h2>
+                <a id="applyAccounting" href="mailto:humanresources@smartpower-electric.com" class="apply-btn">Apply Now</a>
+                
+            </div>
+        </div>
+        
+        <!-- Modal Structure for ENGINEERING -->
+        <div id="engineeringModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('engineeringModal')">&times;</span>
+                <h2 id="engineeringJobs">No Job Openings</h2>
+                <a id="applyEngineering" href="mailto:humanresources@smartpower-electric.com" class="apply-btn">Apply Now</a>
+                
+            </div>
+        </div>
+        
+        <!-- Modal Structure for I.T. -->
+        <div id="itModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('itModal')">&times;</span>
+                <h2 id="itJobs">No Job Openings</h2>
+                <a id="applyIT" href="mailto:humanresources@smartpower-electric.com" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+        
+        <!-- Modal Structure for WAREHOUSE -->
+        <div id="procurementModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('procurementModal')">&times;</span>
+                <h2 id="warehouseJobs">Warehouse & Procurement Job Openings</h2>
+                <br>
+                <img src="css/img/warehouseassociate.jpg" alt="" class="modalimg">
+                <a id="applyWarehouse" href="mailto:humanresources@smartpower-electric.com" class="apply-btn">Apply Now</a>
+                
+            </div>
+        </div>
+        
+        <!-- Modal Structure for PRODUCTION -->
+        <div id="productionModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('productionModal')">&times;</span>
+                <h2 id="productionJobs">No Job Openings</h2>
+                <a id="applyProduction" href="mailto:humanresources@smartpower-electric.com" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+        
+        <!-- Modal Structure for QUALITY CONTROL -->
+        <div id="qualityModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('qualityModal')">&times;</span>
+                <h2 id="qcJobs">No Job Openings</h2>
+                <a id="applyQualityControl" href="mailto:humanresources@smartpower-electric.com" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+        
+        <!-- Modal Structure for UTILITY -->
+        <div id="utilityModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('utilityModal')">&times;</span>
+                <h2 id="utilityJobs">No Job Openings</h2>
+                <a id="applyUtility" href="mailto:humanresources@smartpower-electric.com" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+        
+        
+
+    </div>
+
+  
+    
+</div>
+
+    
+   
+
+
+<br><br><br><br>
+<br><br><br><br>
+
+
+    
+    
+    
+
+
+
+
+    <a href="#" id="goup">
+        <button class="goupbtn">↑</button>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="footer-text">© 2024 Smart Power Electric Corp. All Rights Reserved. </h2>
+            </div>   
+    </footer>
+
+    
+</div>
+
+
+    <script src="js/careers.js"> </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,751 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.custom-cursor {
+    cursor: url('img/cursor.gif'), auto;
+}
+
+
+
+
+body {
+    font-family: 'Innova Heavy', sans-serif;
+    background-image: url('img/mainbg.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh; 
+    
+}
+
+
+html, body {
+    height: 100%; /* Ensure both html and body take up the full height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    scroll-behavior: smooth;
+    
+}
+
+header {
+    opacity: 1; /* Ensure the header is visible and unaffected */
+}
+
+
+body.loaded .main-container{
+    opacity: 1;
+}
+
+
+
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background color */
+    position: sticky;
+    top: 0;
+    width: 100%; /* Ensure the header spans the full width */
+    z-index: 10;
+    height:180px;
+    
+        }
+
+
+
+
+        header .logo img {
+            width: 300px;
+            height: auto;
+            position: relative;
+            transition: transform .3s ease;
+            }
+         
+            .logo img:hover{
+             transform: scale(1.1);
+            }
+
+
+
+
+
+.navbar .logo{
+    opacity: 1;
+    height: 45px;
+    transition: opacity 0.5s ease, height 0.5s ease; /* Smooth transition */
+    position: sticky; 
+    right: 0;
+    z-index: 1000;
+    height: auto;
+    left: 50px;
+    
+    
+}
+
+
+
+
+header .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    margin-left: 700px;
+    
+    
+    
+}
+
+header .navbar ul li {
+    display: inline-block;
+    color:inherit;
+    margin-left: 300px;
+    box-sizing: border-box; /* Ensure border is included in the element's size */
+    margin: 0 15px;
+    padding-right: 0;
+  
+}
+
+
+
+header .navbar ul li a {
+    border: solid 1px transparent;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    
+}
+
+header .navbar ul li a:hover {
+    text-decoration: none;
+    border: 1px solid #fff; /* Thin white border */
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(51, 97, 172, 0.3);
+    transform: scale(1.1);
+    
+}
+
+.navbar a.active {
+    text-decoration: underline;
+    text-decoration-color:#3361ac; 
+    text-decoration-thickness: 3px; 
+}
+
+/* SCREEN RESPONSIVENESS */
+
+
+@media (min-width: 1800px) and (max-width: 2300px){
+    
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 600px;
+       
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+        
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+@media (min-width: 1600px) and (max-width: 1800px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 220px;
+       
+        
+    }
+
+}
+
+
+
+@media (min-width: 1490px) and (max-width: 1600px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 200px;
+       
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+        
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+@media (min-width: 1200px) and (max-width: 1490px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 120px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+       
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        margin-left: 150px;
+
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+@media (min-width: 800px) and (max-width: 1100px) {
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+    
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+
+
+@media (min-width: 500px) and (max-width: 800px){
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+    
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        margin-top: 80px;
+        margin-left: 10px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 13px; /* Slightly larger font for mobile */
+        
+        
+    }
+
+
+
+.suppliers {
+    gap: 30px; /* Reduce gap for small screens */
+}
+
+.suppliers img {
+    width: 150px; /* Further reduce size for smaller screens */
+}
+}
+
+
+
+.highlight {
+    color: #fbb711; /* Change to your desired color */
+}
+
+
+
+
+
+
+
+
+
+
+
+.goupbtn {
+    text-decoration:none;
+    color:whitesmoke;
+    padding: 15px;
+    font-weight: 400;
+    border:2px solid whitesmoke;
+    background: none;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    position: sticky;  
+    font-size: 35px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    transition: transform .3s ease;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 80px;
+    margin-left: 48%;
+    margin-bottom:50px;
+    
+    
+    
+    
+}
+
+.goupbtn:hover {
+    text-decoration: none;
+    border: 2px solid #fff; /* Thin white border */
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: rgba(51, 97, 172, 0.3);
+    transform: scale(1.1);
+    
+}
+
+
+#work {
+    font-style: italic;
+}
+.work {
+    
+    position: relative; /* Required for the pseudo-element positioning */
+    padding-bottom: 30px; /* Adjusts the distance of the underline from the text */
+    display: inline-block; /* Ensures the text stays inline */
+    font-size: 50px;
+    font-style: italic;
+}
+
+.work::after {
+    content: ""; /* Required to display the pseudo-element */
+    position: absolute;
+    bottom: 0; /* Places the underline below the text */
+    width: 30%; /* Adjust the width of the underline here */
+    height: 4px; /* Thickness of the underline */
+    background-color: #3361ac; /* Underline color */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.tagline {
+    padding: 3px 0px;
+    margin-top: 150px;
+    text-align: left;
+    color: whitesmoke;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    
+    opacity: 1; /* Fully visible */
+    transition: opacity 0.5s ease;
+    font-size: 24px;
+    margin-left: 25%; 
+}
+
+.tagline2 {
+    padding: 3px 0px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    
+    opacity: 100%; /* Fully visible */
+    transition: opacity 0.5s ease;
+    margin-top: 250px;
+    
+}
+
+.hiringbtn {
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 15px;
+    font-weight: 400;
+    border: 1px solid whitesmoke;
+    background: none;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    position: absolute;      /* Position relative to .contact container */
+    font-size: 16px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    left: 25%;               /* Position in the center horizontally */
+    top: 15%;                /* Position in the center vertically */
+           }
+
+
+ .hiringbtn:hover {
+        background:#fbb711;
+        border:1px solid #fbb711;
+        color:rgb(32,32,32);
+        box-shadow: 0 0 5px #fbb711, 0 0 25px #fbb711, 0 0 50px #fbb711, 0 0 100px #fbb711;
+        cursor: pointer;
+        font-weight: 1000;
+    }
+
+
+
+/* OVERLAY */
+
+.image-overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 1; /* Ensure it stays above the background */
+    height: 100%;
+
+}
+
+#bg-hiring {
+    width: 100%;
+    object-fit:contain;
+    opacity: 1; /* Adjust opacity for the fade effect */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    height: auto;
+    
+    
+}
+
+/* Optional: Gradient overlay to fade out the bottom */
+.image-overlay::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Adjust as needed for the fade */
+    pointer-events: none;
+    z-index: 1000;
+
+}
+
+
+
+
+/* Ensure content above the video overlay */
+.main-container {
+    position: relative;
+    z-index: 2;
+    
+}
+
+
+/* career  container*/ 
+
+.career-container { 
+    margin: 100px 0 0 200px;
+    width: 78%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+   
+    
+}
+
+.image-wrapper {
+    position: relative;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all ease-in-out 0.3s;
+    
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease-in-out 0.3s;
+    
+}
+
+.image-wrapper:hover img {
+    filter: brightness(0.5); /* Darken the image slightly */
+    transform: scale(1.1); /* Optional zoom effect on hover */
+    cursor: pointer;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    
+    font-size: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-decoration: none;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 900;
+}
+
+.image-wrapper:hover .image-label {
+    opacity: 1; /* Show label on hover */
+}
+
+.image-wrapper:hover {
+    width: 25%; /* Increase image size on hover */
+}
+
+
+
+/* MODAL */ 
+
+
+/* Modal container - hidden by default */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+    
+}
+
+/* Modal content box */
+.modal-content {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    width: 50%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    color: #fffff0;
+    font-weight: 100;
+    
+}
+
+
+
+/* Close button */
+.close-btn {
+    color: #928c8c;
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal-content .modalimg {
+    width: 100%; /* Image scales to the full width of the modal content */
+    max-width: 500px; /* Maximum width to prevent the image from being too large */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline spacing issues */
+    margin: 0 auto; /* Center the image */
+    border-radius: 20px;
+}
+
+
+.apply-btn{
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 10px;
+    font-weight: 400;
+    border: 1px solid whitesmoke;
+    background: none;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    position: absolute;      /* Position relative to .contact container */
+    z-index: 2;   
+    font-size: 20px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    left: 90%;               /* Position in the center horizontally */
+    top: 90%;                /* Position in the center vertically */
+    transform: translate(-50%, -50%); /* Adjust for true centering */
+
+    }
+
+    .apply-btn:hover {
+        background:#fbb711;
+        border:1px solid #fbb711;
+        color:rgb(32,32,32);
+        box-shadow: 0 0 5px #fbb711, 0 0 25px #fbb711, 0 0 50px #fbb711, 0 0 100px #fbb711;
+        cursor: pointer;
+        font-weight: 1000;
+    }
+
+
+    .non-interactive {
+        pointer-events: none; /* Prevent interaction with the background */
+        user-select: none; /* Disable text selection */
+    }
+
+    .modal-content {
+        pointer-events: auto; /* Restore pointer events within the modal content */
+    }
+
+
+  
+    /* FOOTER */
+
+
+.footer {
+    margin-top: 30px; /* Decrease this value to move it higher */
+    width: 100%;
+    background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0), /* Fully transparent black on the left */
+    rgba(0, 0, 0, 0.3) 50%, /* Slightly opaque black at the midpoint */
+    rgba(0, 0, 0, 0) 100% /* Fully transparent black on the right */
+);
+    
+   
+    
+    
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    display: flex;
+    justify-content:center; /* Aligns items to the left */
+    align-items: center;
+    position: relative;
+    
+    
+}
+
+.footer-text {
+    display: flex;
+    align-items: center;
+    color: #d1d1d1;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-weight: 50;
+    font-size: 18px;
+    
+    
+}
+
+
+
+    

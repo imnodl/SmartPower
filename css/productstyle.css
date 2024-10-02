@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.custom-cursor {
+    cursor: url('img/cursor.gif'), auto;
+}
+
+html, body {
+    height: 100%; /* Ensure both html and body take up the full height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('img/mainbg.JPG'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Ensure the image stays in place during scrolling */
+    color: #333;
+    /* Optional: Set the minimum height to 100vh to cover the viewport height */
+    min-height: 100vh; 
+}
+
+.main-container {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Smooth transition */
+}
+header {
+    opacity: 1; /* Ensure the header is visible and unaffected */
+}
+
+
+body.loaded .main-container{
+    opacity: 1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background color */
+    position: sticky;
+    top: 0;
+    width: 100%; /* Ensure the header spans the full width */
+    z-index: 10;
+    height:180px;
+            }
+
+           
+
+
+
+            header .logo img {
+                width: 300px;
+                height: auto;
+                position: relative;
+                transition: transform .3s ease;
+                }
+             
+                .logo img:hover{
+                 transform: scale(1.1);
+                }
+
+
+
+
+
+.navbar .logo{
+    opacity: 1;
+    height: 45px;
+    transition: opacity 0.5s ease, height 0.5s ease; /* Smooth transition */
+    position: sticky; 
+    right: 0;
+    z-index: 1000;
+    height: auto;
+    left: 50px;
+    
+    
+}
+
+
+
+
+header .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    margin-left: 700px;
+   
+    
+    
+}
+
+header .navbar ul li {
+    display: inline-block;
+    color:inherit;
+    margin-left: 300px;
+    box-sizing: border-box; /* Ensure border is included in the element's size */
+    margin: 0 15px;
+    padding-right: 0;
+  
+}
+
+
+
+header .navbar ul li a {
+    border: solid 1px transparent;
+    color: white;
+    display: inline-block;
+    
+    padding: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    
+}
+
+header .navbar ul li a:hover {
+    text-decoration: none;
+    border: 1px solid #fff; /* Thin white border */
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(51, 97, 172, 0.3);
+    transform: scale(1.1);
+    
+    
+}
+
+
+.navbar a.active {
+    text-decoration: underline;
+    text-decoration-color:#3361ac; 
+    text-decoration-thickness: 3px; 
+}
+
+/* SCREEN RESPONSIVENESS */
+
+
+@media (min-width: 1800px) and (max-width: 2300px){
+    
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 600px;
+       
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+        
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+@media (min-width: 1600px) and (max-width: 1800px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 220px;
+       
+        
+    }
+
+}
+
+
+
+@media (min-width: 1490px) and (max-width: 1600px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 200px;
+       
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+        
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+@media (min-width: 1200px) and (max-width: 1490px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 120px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+       
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        margin-left: 150px;
+
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+@media (min-width: 800px) and (max-width: 1100px) {
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+    
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+
+
+@media (min-width: 500px) and (max-width: 800px){
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+    
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        margin-top: 80px;
+        margin-left: 10px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 13px; /* Slightly larger font for mobile */
+        
+        
+    }
+
+
+
+.suppliers {
+    gap: 30px; /* Reduce gap for small screens */
+}
+
+.suppliers img {
+    width: 150px; /* Further reduce size for smaller screens */
+}
+}
+
+
+.tagline {
+    padding: 3px 0px;
+    margin-top: 150px;
+    text-align: center;
+    color: whitesmoke;
+    
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-style: italic;
+    opacity: 1; /* Fully visible */
+    transition: opacity 0.5s ease;
+    font-size: 24px;
+}
+.highlight {
+    color: #fbb711; /* Change to your desired color */
+}
+
+ .tagline2 {
+    padding: 3px 0px;
+    margin-top: 150px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-style: italic;
+    opacity: 100%; /* Fully visible */
+    transition: opacity 0.5s ease;
+    bottom: 100px;
+}
+
+.tagline3 {
+    padding: 3px 0px;
+    margin-top: 500px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-style: italic;
+    opacity: 100%; /* Fully visible */
+    transition: opacity 0.5s ease;
+    
+}
+
+/* SLIDE SHOW */
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    width:900px;
+    height: 500px;
+    top:400px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+   
+    
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-image {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.fade {
+    animation: fade 0.5s ease-in-out;
+    
+}
+
+@keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    transition: background-color 0.3s;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Products */
+
+
+
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    
+    width: auto;
+    height: auto;
+    
+          
+}
+
+.product1{
+    display:inline-flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap;
+    
+    
+}
+
+.product img {
+    width: 300px; 
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    
+}
+
+.product img:hover {
+    width: 300px; 
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    
+}
+
+
+/* Product2 container with gap */
+#product2 {
+    display: flex;
+    justify-content: center;
+    gap: 50px;  /* The gap between the images in #product2 */
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#product2 img {
+    width: 500px; 
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+}
+
+#product2 img:hover {
+    transform: scale(1.1);
+}
+
+
+.goupbtn {
+    text-decoration:none;
+    color:whitesmoke;
+    padding: 15px;
+    font-weight: 400;
+    border:2px solid whitesmoke;
+    background: none;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    position: sticky;  
+     z-index: 9999;   
+    font-size: 35px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    transition: transform .3s ease;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 80px;
+    margin-left: 48%;
+    margin-bottom:50px
+    
+    
+    
+}
+
+.goupbtn:hover {
+    text-decoration: none;
+    border: 2px solid #fff; /* Thin white border */
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: rgba(51, 97, 172, 0.3);
+    transform: scale(1.1);
+    
+}
+
+
+/* FOOTER */
+
+
+.footer {
+    margin-top: 30px; /* Decrease this value to move it higher */
+    width: 100%;
+    background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0), /* Fully transparent black on the left */
+    rgba(0, 0, 0, 0.3) 50%, /* Slightly opaque black at the midpoint */
+    rgba(0, 0, 0, 0) 100% /* Fully transparent black on the right */
+);
+    
+   
+    
+    
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    display: flex;
+    justify-content:center; /* Aligns items to the left */
+    align-items: center;
+    position: relative;
+    
+    
+}
+
+.footer-text {
+    display: flex;
+    align-items: center;
+    color: #d1d1d1;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-weight: 50;
+    font-size: 18px;
+    
+    
+}

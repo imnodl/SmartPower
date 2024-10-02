@@ -1,0 +1,972 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Bank Gothic Medium';
+    src: url('fonts/BankGothicMedium.woff2') format('woff2'),
+         url('fonts/BankGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.custom-cursor {
+    cursor: url('img/cursor.gif'), auto;
+}
+
+html, body {
+    height: 100%; /* Ensure both html and body take up the full height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('img/mainbg.JPG'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Ensure the image stays in place during scrolling */
+    color: #333;
+    /* Optional: Set the minimum height to 100vh to cover the viewport height */
+    min-height: 100vh; 
+    overflow: hidden;
+    opacity: 1;
+    background-color: #fffff0;
+    
+}
+
+
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* Loading screen */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("img/plantload.jpg");/* Change the background to black */
+    z-index: 9999; /* Make sure it stays on top of everything */
+    transition: opacity 1s ease; /* Fade-out transition */
+
+    display: flex;
+    justify-content: center; /* Center content vertically */
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    background-color:  #FFFFF0;
+    ; /* Dark background for loading screen */
+}
+
+
+
+#loading-logo {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 785px;
+    margin-bottom: -110px;
+    opacity: 0; /* Start hidden */
+    animation: logo-reveal 7s forwards; /* Apply the reveal effect */
+}
+
+/* Keyframes for the logo reveal effect */
+@keyframes logo-reveal {
+    0% {
+        opacity: 0; /* Start hidden */
+        filter: blur(10px); /* Start blurred */
+        transform: scale(1); /* Start at normal size */
+    }
+   
+   
+    50% {
+        opacity: .8; /* Fully visible */
+        filter: blur(0px); /* No blur */
+        transform: scale(1.2); /* Further zoom in */
+    }
+
+    50% {
+        opacity: 1; /* Fully visible */
+        filter: blur(0px); /* No blur */
+        transform: scale(1.2); /* Further zoom in */
+    }
+
+   
+   
+    100% {
+        opacity: 1; /* Fully visible */
+        filter: blur(0px); /* Gradually blur */
+        transform: scale(1.2); /* Zoom in even more */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        filter: blur(10px); /* Gradually blur */
+        transform: scale(1.2); /* Zoom in even more */
+    }
+}
+
+/* Shine effect moving across the logo */
+#loading-logo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.1) 80%);
+    transform: skewX(-20deg);
+    animation: shine 3s ease-in-out 3.5s; /* Delayed shine effect */
+}
+
+/* Keyframes for the shine effect */
+@keyframes shine {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+
+
+/* loading text*/
+
+.loading-content {
+    margin-left: 50px;
+}
+
+#loading-text, #loading-text2 {
+    
+    font-family: 'Orbitron', sans-serif; /* Using Orbitron font */
+    font-style: italic;
+    font-size: 35px;
+    font-weight:900;
+    letter-spacing: 8px;
+    color: rgba(0, 0, 0, 0.1); /* Very light text at the beginning */
+    
+}
+
+#loading-text span, #loading-text2 span {
+    font-family: 'Orbitron', sans-serif; /* Using Orbitron font */
+    display: inline-block;
+    opacity: 0.1;
+    color: #3361ac; /* Final filled color of the letters */
+    animation: loading-text-fill 2s forwards;
+    
+}
+
+
+/* Loading bar container */
+#loading-bar-container {
+    width: 15%; /* Adjust width as needed */
+    height: 5px;
+    background-color: #555;
+    border-radius: 5px;
+    margin-top: 20px; /* Space between the text and loading bar */
+    
+}
+
+/* Actual loading bar */
+#loading-bar {
+    width: 0;
+    height: 100%;
+    background-color: #fffff0;
+   
+    animation: loading 4s ;
+}
+
+/* Keyframes for the loading animation */
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+#loading-text span:nth-child(1), #loading-text2 span:nth-child(1) {
+    animation-delay: 0s;
+} 
+#loading-text span:nth-child(2), #loading-text2 span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+#loading-text span:nth-child(3), #loading-text2 span:nth-child(3) {
+    animation-delay: .5s;
+}
+#loading-text span:nth-child(4), #loading-text2 span:nth-child(4) {
+    animation-delay: .8s;
+}
+#loading-text span:nth-child(5), #loading-text2 span:nth-child(5) {
+    animation-delay: 1s;
+}
+#loading-text span:nth-child(6), #loading-text2 span:nth-child(6) {
+    animation-delay: 1.1s;
+}
+#loading-text span:nth-child(7), #loading-text2 span:nth-child(7) {
+    animation-delay: 1.2s;
+}
+#loading-text span:nth-child(8), #loading-text2 span:nth-child(8) {
+    animation-delay: 1.3s;
+}
+#loading-text span:nth-child(9), #loading-text2 span:nth-child(9) {
+    animation-delay: 1.4s;
+}
+#loading-text span:nth-child(10), #loading-text2 span:nth-child(10){
+    animation-delay: 1.5s;
+}
+#loading-text2 span:nth-child(11) {
+    animation-delay: 1.6s;
+}
+#loading-text2 span:nth-child(12) {
+    animation-delay: 1.7s;
+}
+#loading-text2 span:nth-child(13) {
+    animation-delay: 1.8s;
+}
+#loading-text2 span:nth-child(14) {
+    animation-delay: 1.9s;
+}
+#loading-text2 span:nth-child(15) {
+    animation-delay: 2s;
+}
+#loading-text2 span:nth-child(16) {
+    animation-delay: 2.1s;
+}
+#loading-text2 span:nth-child(17) {
+    animation-delay: 2.2s;
+}
+#loading-text2 span:nth-child(18) {
+    animation-delay: 2.3s;
+}
+#loading-text2 span:nth-child(19) {
+    animation-delay: 2.4s;
+}
+
+
+@keyframes loading-text-fill {
+    20% {
+        opacity: 0.8;
+    }
+   
+    100% {
+        opacity: 1;
+        color: #fbb711;
+    }
+}
+    
+  
+
+header {
+    opacity: 1; /* Ensure the header is visible and unaffected */
+}
+
+
+body.loaded{
+    opacity: 1;
+    overflow: visible;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background color */
+    position: sticky;
+    margin-bottom: 30px;
+    width: 100%; /* Ensure the header spans the full width */
+    z-index: 10;
+    height:180px;
+    
+    
+      
+ }
+
+.empbtn{
+    text-decoration:none;
+    color:whitesmoke;
+    padding: 10px;
+    font-weight: 400;
+    border:1px solid whitesmoke;
+    background: none;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    position: fixed;  /* Fixed positioning so the button stays in place */
+     z-index: 9999;   
+    font-size: 15px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    }
+
+    .empbtn:hover {
+        background:#fbb711;
+        border:1px solid #fbb711;
+        color:rgb(32,32,32);
+        box-shadow: 0 0 5px #fbb711, 0 0 25px #fbb711, 0 0 50px #fbb711, 0 0 100px #fbb711;
+        cursor: pointer;
+        font-weight: 1000;
+    }
+
+
+header .logo img {
+   width: 300px;
+   height: auto;
+   position: relative;
+   transition: transform .3s ease;
+   
+   }
+
+   .logo img:hover{
+    transform: scale(1.1);
+   }
+
+
+
+
+header .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    margin-left: 700px;
+    
+  
+    
+}
+
+header .navbar ul li {
+    display: inline-block;
+    color:inherit;
+    margin-left: 300px;
+    box-sizing: border-box; /* Ensure border is included in the element's size */
+    margin: 0 15px;
+    padding-right: 0;
+  
+}
+
+
+header .navbar ul li a {
+    border: solid 1px transparent;
+    color: white;
+    display: inline-block;
+    
+    padding: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    
+}
+
+header .navbar ul li a:hover {
+    text-decoration: none;
+    border: 1px solid #fff; /* Thin white border */
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(51, 97, 172, 0.3);
+    transform: scale(1.1);
+    
+}
+
+
+
+
+
+
+
+
+.navbar a.active {
+    text-decoration: underline;
+    text-decoration-color:#3361ac; 
+    text-decoration-thickness: 3px; 
+}
+
+
+/* SCREEN RESPONSIVENESS */
+
+
+@media (min-width: 1800px) and (max-width: 2300px){
+    
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 600px;
+       
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+        
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+@media (min-width: 1600px) and (max-width: 1800px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 220px;
+       
+        
+    }
+
+}
+
+
+
+@media (min-width: 1490px) and (max-width: 1600px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 200px;
+       
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+        
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+@media (min-width: 1200px) and (max-width: 1490px){
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+        
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 120px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+        
+       
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        margin-left: 150px;
+
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+@media (min-width: 800px) and (max-width: 1100px) {
+    /* Ensure the navbar and its content adjust for smaller screens */
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+    
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 15px; /* Slightly larger font for mobile */
+        margin-top: 5px;
+    }
+
+    .suppliers img {
+        width: 100px; /* Reduce the size of the logos on smaller screens */
+    }
+ 
+}
+
+
+
+
+@media (min-width: 500px) and (max-width: 800px){
+
+    header .navbar {
+        flex-direction: column; /* Stack the navbar */
+      
+    
+    }
+    
+    header .navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        margin-top: 80px;
+        margin-left: 10px;
+        
+    }
+
+    
+
+    header .navbar ul li a {
+        padding: 15px; /* Increase padding for touch devices */
+        font-size: 13px; /* Slightly larger font for mobile */
+        
+        
+    }
+
+
+
+.suppliers {
+    gap: 30px; /* Reduce gap for small screens */
+}
+
+.suppliers img {
+    width: 150px; /* Further reduce size for smaller screens */
+}
+}
+
+
+.tagline {
+    padding: 3px 0px;
+    margin-top: 150px;
+    text-align:center;
+    color: whitesmoke;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    opacity: 1; /* Fully visible */
+    transition: opacity 0.5s ease;
+    font-size: 30px;
+     }
+
+.tagline h2 {
+    font-size:60px;
+    font-style: italic;
+}
+
+
+.goupbtn {
+    text-decoration:none;
+    color:whitesmoke;
+    padding: 15px;
+    font-weight: 400;
+    border:2px solid whitesmoke;
+    background: none;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    position: sticky;  
+     z-index: 9999;   
+    font-size: 35px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5);
+    transition: transform .3s ease;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 80px;
+    margin-left: 48%;
+    margin-bottom:50px;
+    
+    
+    
+}
+
+.goupbtn:hover {
+    text-decoration: none;
+    border: 2px solid #fff; /* Thin white border */
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: rgba(51, 97, 172, 0.3);
+    transform: scale(1.1);
+    
+}
+.highlight {
+    color: #fbb711; /* Change to your desired color */
+}
+
+
+
+
+
+.tagline3 {
+    padding: 3px 0px;
+    
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-style: italic;
+    opacity: 100%; /* Fully visible */
+    transition: opacity 0.5s ease;
+    
+}
+
+/* SLIDE SHOW */
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    width:800px;
+    height: 55vh;
+    top:50px;
+    box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.5) ;
+   flex-wrap: wrap;
+   border: black solid;
+   
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-image {
+    width: 100%;
+    height: auto;
+    
+}
+
+.fade {
+    animation: fade 0.5s ease-in-out;
+    
+}
+
+@keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    transition: background-color 0.3s;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.suppliers {
+    display: flex;
+    justify-content: center;  /* Center the images */
+    align-items: center;  /* Vertically align images */
+    gap: 60px; /* Adjust the gap between images */
+    flex-wrap: wrap; /* Ensure the logos wrap to the next line on smaller screens */
+    padding: 20px; 
+   
+}
+
+.suppliers img {
+    width: 250px;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: auto; /* Ensure the height adapts based on the aspect ratio */
+    margin: 0 15px;
+}
+
+.suppliers img:hover {
+    transform: scale(1.3); /* Enlarge the image on hover */
+}
+
+
+
+/* OVERLAY */
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Video overlay height */
+    overflow: hidden;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 1; /* Ensure it stays above the background */
+    height: 100%;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1; /* Adjust opacity for the fade effect */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    height: 100%
+}
+
+/* Optional: Gradient overlay to fade out the bottom */
+.video-overlay::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Adjust as needed for the fade */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+
+
+
+/* Ensure content above the video overlay */
+.main-container {
+    position: relative;
+    z-index: 2;
+    
+}
+
+
+/* carousel */
+
+
+.carousel-container {
+    overflow: hidden; /* Hide everything outside the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%; /* Set the width of the container */
+    max-width: 600px; /* Optional: Set a max width */
+  
+    margin-right: 250px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    width: 100%; /* Ensure track expands to full width */
+}
+
+.carousel-item {
+    min-width: 100%; /* Each item takes full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    width: 100%; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+    
+}
+
+
+
+.tagline2 {
+    padding: 3px 0px;
+    text-align: left;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-style: italic;
+    opacity: 100%; /* Fully visible */
+    transition: opacity 0.5s ease;
+    margin-left: 450px;
+    
+    
+}
+
+
+
+
+    .u {
+        border-bottom: 4px solid #3361ac; /* Creates an underline with a custom thickness and color */
+        padding-bottom: 10px; /* Adjusts the distance of the underline from the text */
+        display:inline-block; /* Ensures the underline only applies to the text */
+        width: 35%;
+    }
+
+
+
+#what {
+    margin-top: 600px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0), /* Fully transparent black on the left */
+    rgba(0, 0, 0, 0.3) 50%, /* Slightly opaque black at the midpoint */
+    rgba(0, 0, 0, 0) 100% /* Fully transparent black on the right */
+);
+
+
+    position: relative;
+    overflow: hidden; /* Ensure the cloudy overlay stays inside the div */
+    align-items: center;
+    
+
+}
+
+
+
+/* FOOTER */
+
+
+.footer {
+    margin-top: 30px; /* Decrease this value to move it higher */
+    width: 100%;
+    background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0), /* Fully transparent black on the left */
+    rgba(0, 0, 0, 0.3) 50%, /* Slightly opaque black at the midpoint */
+    rgba(0, 0, 0, 0) 100% /* Fully transparent black on the right */
+);
+    
+   
+    
+    
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    display: flex;
+    justify-content:center; /* Aligns items to the left */
+    align-items: center;
+    position: relative;
+    
+    
+}
+
+.footer-text {
+    display: flex;
+    
+    align-items: center;
+    color: #d1d1d1;
+    
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-weight: 50;
+    font-size: 18px;
+    
+    
+}
+
+
+
+
+
+
